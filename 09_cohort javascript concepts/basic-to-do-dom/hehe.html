@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Todo List</title>
+    <style>
+        #todos {
+            list-style: none;
+            padding: 0;
+        }
+
+        .task {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            border: 1px solid #ccc;
+            margin: 5px 0;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <h2>Simple Todo List</h2>
+
+    <input type="text" id="newTask" placeholder="Add a new task">
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="todos"></ul>
+
+    <script>
+        function addTask() {
+            const newTaskInput = document.getElementById("newTask");
+            const taskText = newTaskInput.value.trim();
+
+            if (taskText !== "") {
+                // Create a new task element
+                const taskElement = document.createElement("li");
+                taskElement.classList.add("task");
+
+                // Create a span for the task text
+                const taskTextSpan = document.createElement("span");
+                taskTextSpan.textContent = taskText;
+
+                // Create buttons for marking as completed and removing
+                const completeButton = document.createElement("button");
+                completeButton.textContent = "Complete";
+                completeButton.onclick = function() {
+                    taskTextSpan.classList.toggle("completed");
+                };
+
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.onclick = function() {
+                    taskElement.remove();
+                };
+
+                // Append elements to the task element
+                taskElement.appendChild(taskTextSpan);
+                taskElement.appendChild(completeButton);
+                taskElement.appendChild(deleteButton);
+
+                // Append the task element to the list
+                document.getElementById("todos").appendChild(taskElement);
+
+                // Clear the input field
+                newTaskInput.value = "";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let timeout;
+        function debouncedPopulateDiv(){
+            //delay the call to populateDiv until 1000 ms have passed after calling debouncedPopulateDiv function
+            // clearTimeout  clear the clock
+            clearTimeout(timeout)
+             timeout = setTimeout(() => {
+                populateDiv()
+            }, 1000);
+                   
+        }
+            async function populateDiv(){
+            const a = document.getElementById("first").value
+            const b = document.getElementById("second").value
+            const response = await fetch("http://localhost:2000/sum?a=" + a + "&b=" + b)
+            // console.log(response)
+            const finalData = await response.text()
+            console.log(finalData);
+            document.getElementById("finalvalue").innerHTML = finalData
+            
+        }
+    </script>
+</head>
+<body>
+    <input oninput="debouncedPopulateDiv()" id="first" type="text" placeholder="1st Number"></input><br></br>
+    <input oninput="debouncedPopulateDiv()" id="second" type="text" placeholder="2nd Number"></input><br></br>
+    <div id="finalvalue"></div>
+</body>
+</html>

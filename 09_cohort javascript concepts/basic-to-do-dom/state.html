@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="to-do" type="text" placeholder="Tasks"></input><br></br>
+    <input id="about" type="text" placeholder="Description"></input><br></br>
+    <div id="papa"></div>
+    <script>
+
+      // you have to write this logic once there is no shortcut to this
+      function createChild(task,description,id){
+        const child = document.createElement("div")
+        const firstGrandChild = document.createElement("div")
+        firstGrandChild.innerHTML = task
+        const secondGrandChild = document.createElement("div")
+        secondGrandChild.innerHTML = description
+        const thirdGrandChild = document.createElement("button")
+        thirdGrandChild.innerHTML = "Mark as done!"
+        thirdGrandChild.setAttribute("onclick" , `markAsDone(${id})`)
+        child.appendChild(firstGrandChild)
+        child.appendChild(secondGrandChild)
+        child.appendChild(thirdGrandChild)
+        child.setAttribute("id" , id)
+        return child
+
+       }
+        
+        function updateDomAccTostate(state){
+            // state will be an array
+            // elemnts of array would be title, description, id
+            const parent = document.getElementById("papa")
+            parent.innerHTML = ""
+            for (let i = 0;  i < state.length; i++) {
+                const child = createChild(state[i].title,state[i].description,state[i].id )   
+                parent.appendChild(child)           
+                
+            }
+        }    
+
+                // what will happen in real world to-do app that backend will send some data that need  to be appendid on the dom. if you do it traditional way you  have to compare the new todo that have come then see what  are the new things got added and then you eventually add them to to-do app by giving first title: & description: in the input box and then click to add to-do button to add them see how time consuming this is .Your user need to wait for soo much to see his updated to-do which he might had updated from another client but not reflecting to the web that's where react helps us 
+
+
+            // updateDomAccTostate([
+            //     {
+            //         title: "gym ja bc",
+            //         description: "subha 6 baje",
+            //         id: 4324
+            //     },{
+            //         title: "coding",
+            //         description: "week-4 assignments",
+            //         id: 4325
+            //     }
+            // ])
+// +++++++++++++++++++ more real world ++++++++++++
+        // in every 4 seconds we are fetching fresh todos from backend and it got appendid to the dom we dont require to do anything
+        window.setInterval(async ()=>{
+            const resonse = await fetch("https://sum-se//rver.100xdevs.com/todos")
+            const data = await resonse.json()
+            updateDomAccTostate(data.todos)
+        },4000)
+
+
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<script>
+    function updateState(newTodos) {
+      // Calculate the difference between newTodos and oldTodos.
+      // Specifically, find out what todos are:
+      // 1. added
+      // 2. deleted
+      // 3. updated
+      const added = [];
+      const deleted = [];
+      const updated = [];
+    
+      // Find added and updated todos
+      newTodos.forEach(newTodo => {
+        const oldTodo = oldTodoState.find(todo => todo.id === newTodo.id);
+    
+        if (!oldTodo) {
+          added.push(newTodo);
+        } else if (!isEqual(newTodo, oldTodo)) {
+          updated.push({ oldTodo, newTodo });
+        }
+      });
+    
+      // Find deleted todos
+      oldTodoState.forEach(oldTodo => {
+        const existsInNew = newTodos.some(todo => todo.id === oldTodo.id);
+        if (!existsInNew) {
+          deleted.push(oldTodo);
+        }
+      });
+    
+      // Process added, deleted, and updated todos
+      added.forEach(addTodoToDom);
+      deleted.forEach(removeTodoFromDom);
+      updated.forEach(({ oldTodo, newTodo }) => updateTodoInDom(oldTodo, newTodo));
+    
+      // Update oldTodoState
+      oldTodoState = newTodos.slice();
+    }
+    </script>

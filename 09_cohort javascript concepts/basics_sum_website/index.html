@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function populateDiv(){
+            // document - its a global variable
+            const a = document.getElementById("numberOne").value
+            const b = document.getElementById("numberTwo").value
+            const element = document.getElementById("finalSum")
+            element.innerHTML = parseInt(a) + parseInt(b)
+        }
+    </script>
+</head>
+<body>
+    <input id="numberOne" type="text" placeholder="First number"></input> 
+    <br></br>
+    <input id="numberTwo" type="text" placeholder="second number"></input>
+    <br></br>
+
+    <button onclick="populateDiv()"> calculate</button>
+    <br>
+    <br>
+    <div id="finalSum"></div>
+
+</body>
+</html>

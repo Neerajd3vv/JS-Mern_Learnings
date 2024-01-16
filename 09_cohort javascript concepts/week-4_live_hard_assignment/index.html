@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        async function calculateInt (){
+           const a = document.getElementById("prin").value
+           const b = document.getElementById("time").value
+           const c = document.getElementById("rate").value
+            const response = await fetch("http://localhost:3000/int?a=" + a +"&b=" + b + "&c=" +c)
+            const result = await response.json()
+            document.getElementById("finalValue").innerHTML = "<br>Total Amount: " + result.total + "<br><br>Interest Earned: " + result.interest;
+        }
+    </script>
+</head>
+<body>
+    <input id="prin" type="text" placeholder=" principal amount"></input>
+    <input id="time" type="text" placeholder="  time"></input><br></br>
+    <input id="rate" type="text" placeholder="  interest rate " style=" margin-left: 50px;"></input><br></br>
+    <button onclick="calculateInt()" style="margin-left: 90px;">calculate</button>
+    <div id="finalValue"></div>
+</body>
+</html>

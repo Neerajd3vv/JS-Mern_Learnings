@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+ 
+      async function addition(){
+            const a = document.getElementById("num1").value
+            const b = document.getElementById("num2").value
+            const response = await fetch("http://localhost:2000/sum?a=" + a + "&b=" + b)
+            // console.log(response)
+            const finalData = await response.text()
+            console.log(finalData);
+            document.getElementById("finalSum").innerHTML = finalData
+            
+        }
+    </script>
+</head>
+<body>
+    <input oninput="addition()" id="num1" type="text" placeholder="1st Number"></input><br></br>
+    <input oninput="addition()" id="num2" type="text" placeholder="2nd Number"></input><br></br>
+    <div id="finalSum"></div>
+</body>
+</html>

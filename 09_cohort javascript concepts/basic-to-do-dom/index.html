@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       async function populateDiv(){
+            const task = document.getElementById("to-do").value
+            const description = document.getElementById("about").value
+            const response = await fetch("http://localhost:3066/to-do?task=" + task 
+            + "&description=" + description )
+            const data =  await response.json()
+            document.getElementById("addTodo").innerHTML = "<br>To-Do: " + data.tasks + "<br>Description: " + data.about
+
+        }
+    </script>
+</head>
+<body>
+    <input id="to-do" type="text" placeholder="Tasks"></input><br></br>
+    <input id="about" type="text" placeholder="Description"></input><br></br>
+    <button onclick="populateDiv()"> Add To-do</button>
+    <div id="addTodo">
+        <div>
+            <div>Title of To-do 1</div>
+            <div>description of To-do 1</div>
+            <button>Mark as done!</button>
+        </div>
+        
+    </div>
+
+
+</body>
+</html>

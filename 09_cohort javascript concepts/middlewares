@@ -1,0 +1,254 @@
+// how can we to pre-checks before our actuall logic runs following is the ugly way to it
+
+// const express = require ("express")
+// const app =  express()
+// const port = 2001
+
+// app.get("/healthCheckup" , (req,res)=>{
+//     const username = req.headers.username
+//     const password = req.headers.password
+//     const kidneyId = req.query.kidneyId
+//     // auth check
+//     if (username != "neeraj" || password != "sd-neeraj") {
+//         res.status(403).json({"msg": "user not found"})
+//         return                
+//     } 
+    
+//     // input validation
+//     if(kidneyId != 1 && kidneyId != 2){
+//         res.status(411).json({"msg": "unexpected inputs"})
+//         return
+//     }
+//     // if both check are passed server run some logic with input and return it
+//     res.send("your kidney health is fine!")
+// })
+
+// app.listen(port,()=>{
+//     console.log(`listening on port ${port}`);
+// })
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// bhaiya lied to us actual syntax of routree handler is : -
+// here next as a argument is a function in itself which we call so controll can flow towards next callback function
+
+// app.get("/cutomroute",(req,res,next)=>{
+//     console.log("hello from cb 1");
+// },(req,res,next)=>{
+//     console.log("hello from cb 2");
+// })
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// now middleware they are the something that help us to do prechecks before running actual backend logic to the input we get from client side
+
+// function userAuthMiddleware(req,res,next){
+//     const username = req.headers.username
+//     const password = req.headers.password
+//     if (username != "Devneeraj" || password != "sabkaPapa") {
+//         res.status(404).json({msg : "incorrect inputs"})  
+//         return      
+//     }else{
+//         next()
+//     }
+// }
+// function kidneyIdVerifyMiddleware(req,res,next){
+//     const kidneyId = req.query.kidneyId
+//     if (kidneyId != 1 && kidneyId != 2) {
+//         res.status(404).json({msg : "unexpected input"})     
+//         return   
+//     }else{
+//         next()
+//     }
+// }
+
+// const express = require("express")
+// const app = express()
+// const port = 6069
+
+// app.get("/kidney-checkup" , userAuthMiddleware, kidneyIdVerifyMiddleware , (req,res)=>{
+//     // do something with inputs here and res back to client for now its just direct send
+//     res.send("your kidney are fine")
+// })
+
+// app.get("/health-checkup" , userAuthMiddleware, kidneyIdVerifyMiddleware , (req,res)=>{
+//     // do something with inputs here
+// //     res.send("your kidney are fine")
+// // })
+
+// // app.get("/heart-checkup" , userAuthMiddleware, (req,res)=>{
+// //     // do something, run some backend logic
+// //     res.send("your heart is healthy")
+// // }) 
+
+// // app.listen(port, ()=>{
+// //     console.log(`This server is listening on port ${port}`);
+// // })
+// // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// //app.use -> what does it do?
+// const express = require("express")
+// const app = express()
+// const port = 6061
+// // live class assigmnet one count the no. of request to a server
+// let noOfRequest = 0
+// function totalRequests(req,res,next){
+    
+//     noOfRequest ++  
+//     console.log(noOfRequest);
+//     next()
+// }
+// //middleware
+// // app.use we use where we require a middleware for every routes in the server
+// app.use(totalRequests)
+
+// app.get("/kidney-checkup" , (req,res)=>{
+//     // do something with inputs here and res back to client for now its just direct send
+//     res.send("your kidney are fine")
+// })
+
+// app.listen(port, ()=>{
+//     console.log(`server is listening on port : ${port}`);
+// })
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// live assignment 2 - avg time server take to handle requests
+
+
+
+
+
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// why do we need input validation let see with example
+// traditional way -->>
+// const express = require("express")
+// const app = express()
+// app.use(express.json())
+// app.post("/health-checkup", (req,res)=>{
+//     //expecting kidneys = [1,2]
+//     const kidneys = req.body.kidneys
+//     // problem is i have to do multiple checks like = check input is num , it is array or not , futher check if it is a array then it must be aaray of numbers etc so its not very ugly  ,
+//     // better way - zod library which we see later for now -- global catches
+//     // if (!kidneys) {
+//     //     res.json({msg : "invalid inputs"}) 
+//     //     return    
+//     // }
+//     const kidneysLength = kidneys.length
+
+//     res.send(`Total kidneys you have  : ${kidneysLength}`)
+// })
+
+// // global catches . we define this middle ware so if there is any exception to the app this get called any user sees msg - " something went worng"
+// app.use((err,req,res,next) => {
+//     res.json({msg: "someting went wrong with the server"})
+// })
+
+
+// app.listen(2001)
+
+// _____________________________ OR ___________________________________
+// const express = require("express")
+// const app = express()
+// app.use(express.json())
+// app.post("/health-checkup", (req,res)=>{
+//     const kidneys = req.body.kidneys
+//     const kidneysLength = kidneys.length
+//     res.send(`Total kidneys you have  : ${kidneysLength}`)
+// })
+
+// // global catches . we define this middle ware so if there is any exception to the app this get called any user sees msg - " something went worng"
+// app.use((err,req,res,next) => {
+//     res.json({msg: "someting went wrong with the server"})
+// })
+
+
+// app.listen(2001)
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// better way to do input validation == ZOD
+// best code to understand zode library
+const express = require("express")
+// importing zod
+const zod = require("zod")
+const app = express()
+const port = 2776
+
+const schema = zod.array(zod.number())
+const schemanother = zod.object({
+    email: zod.string().email(),
+    password : zod.string().min(6)
+})
+
+//middleware
+app.use(express.json())
+
+app.post("/health-kidney" ,(req,res)=>{
+    const kidneys = req.body.kidneys
+    const response = schema.safeParse(kidneys)
+    
+    res.send(`Total no. of kidneys : ${(kidneys.length)}`)
+})
+app.post("/validateinput",(req,res)=>{
+    // destucting the data from body
+    const {email, password} = req.body
+    const userInfo = {email , password}
+    // const response = schemanother.safeParse(req.body)   
+    // ++++++++ or we can do fo this +++++++++
+    const response = schemanother.safeParse(userInfo) 
+    res.send(response)
+})
+
+// global err handing middleware
+app.use((err,req,res,next)=>{
+    res.send("server mar gaya baad me aaio")
+})
+
+app.listen(port)
+
+
+
+
+// decribing schema for following condition
+// const zod  = require("zod")
+
+// {
+//     email: "something.com"
+//     password: "8 character"
+//     country: "IN", "USA"
+// }
+
+
+
+// const schema = zod.object({
+//     email : zod.string().email(),
+//     password: zod.string().min(8),
+//     country: zod.literal("IN").or(zod.literal("USA"))
+// })
+
+
+
+
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+router.post('/signup', async (req, res) => {
+    // Implement admin signup logic
+    const username = req.body.username
+    const password = req.body.password
+    const adminCheck =  await Admin.findOne({username: username, password: password})
+    if (!adminCheck) {
+        const addAdmin = new Admin({
+            username: username,
+            password : password
+        })        
+        addAdmin.save()
+    }else{
+        return res.json({msg: "already a admin"})
+    }
+    res.json({msg: "Admin created successfully"})
+   
+});
