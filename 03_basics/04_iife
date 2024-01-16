@@ -1,0 +1,18 @@
+// immediately invoked function expression 
+
+// function chai(){
+//     console.log(`db connected`);
+// }
+// chai()
+
+
+(function chai (){
+    console.log(`db connected`);      // named iife chai here/
+})();
+
+// +++++++++ iife in arrow function +++++++++++++
+
+// (()=>{
+//     console.log(`db connected`)     // unnamed iife//
+// })();
+
