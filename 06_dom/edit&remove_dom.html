@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+<ul class="languages">
+    <li>Javascript</li>
+    
+</ul>
+</body>
+<script>
+    // not a optimal way pura tree traverse hora hai isme 
+    // function addNewLang(langname){
+    // const newLang =  document.createElement("li")
+    // newLang.innerHTML = `${langname}`
+    // document.querySelector(".languages").appendChild(newLang)
+    // }
+    // addNewLang("cipi chipi chadsadpa chapa")
+
+
+    // ++++++ do this instead +++++++
+    function addNewLangOptimally(langName){
+        const newLang = document.createElement("li")
+        newLang.appendChild(document.createTextNode(langName))
+        document.querySelector(".languages").appendChild(newLang)
+    }
+
+    addNewLangOptimally("pyton")
+    addNewLangOptimally("typescript")
+
+    // -> how to     Edit value 
+//    const removeLang = document.querySelector("li:nth-child(2)")   
+//         removeLang.innerHTML = "java"
+
+    //    ++++++++++++++ or +++++++++++
+
+    const removeLang = document.querySelector("li:nth-child(2)")
+
+    // const newLi = document.createElement("li")
+    // newLi.textContent = "java"
+    // removeLang.replaceWith(newLi)
+
+    // ++++++++++++++ Removeal of child ++++++++++++++++++++++
+
+    const deleteLi  = document.querySelector("li:first-child") 
+    deleteLi.remove()         
+
+
+</script>
+</html>

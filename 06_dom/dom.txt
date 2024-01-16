@@ -1,0 +1,9 @@
+// 1) dom is tree like structure each element is a node in dom 
+// 2) parent has childs and childs have children to
+// 3) elements can be access in dom by Id's and class ==> getElementById("id") , getElementByClassName("class") -> returns you HTML collections
+// 4) querySelectorAll -> returns you NodeList , querySelector return your that first element you passes into into
+// 5) you can access any tag directly in querySelectorAll("ul or h1 or h2 etcc")
+or Else you can do i you had set attributr id or class to any element is ->
+querySelectorAll(".class") and for id -- querySelectorAll("#id")
+
+// 6) convert html collections or NodeList into array by using ->  Array.from(put your HTMLCollection or Nodelist name here) so you can use methods provided by arrays in js which are not in NodeList , HTMLCollection such as-  forEach

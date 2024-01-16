@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body style="background-color: black; color: azure;">
+    <div id="firstDiv"> TopDiv</div>
+</body>
+<script>
+  const secondDiv =  document.createElement("div")
+  secondDiv.innerHTML = "second div"
+  secondDiv.style.backgroundColor = "yellow"
+  secondDiv.style.color = "blue"
+  const parent =  document.getElementById("firstDiv")
+  document.getElementById("firstDiv").appendChild(secondDiv)
+//   +++++++++++++++++++++++++++++++++++++++++
+  document.body.appendChild(secondDiv)
+
+</script>
+</html>
