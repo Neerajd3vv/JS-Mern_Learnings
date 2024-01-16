@@ -1,0 +1,26 @@
+// 1. split() ==>> is very useful it convert string into Array of substring
+// 2. Promise.all ==>> it is a method in js that take array of promises as input and this new promise only get resolved after all the promise in inputs got resolved
+return Promise.all([p1,p2,p3]).then(()=>{
+    
+})
+// 3. promise chaning is used to resolve promises one by one( look week 2 hard assignmnet is you forget)
+// 4. app.all catch all extra undefined route in the port and throw error == route not found
+// 5. path is module in js use to concate file adn to make directory path - > week-2 node js assignmnet me hai
+// 6. const { v4 : uuidv4} = require("uuid") 
+example: const myDetail = {
+          id: uuidv4(),
+          name:"neeraj",
+          city: "new-delhi"
+        }
+
+    console.log(myDetail);
+// findOne(put condition check here) -> it used to find some specifc data from database on the bases of condition check -> look 09 cohort files go to database.js
+// clearTimeout - to clear our clock 
+// debouncing
+// 7. parent.firstElementChild -> gives you the first element of that parent&
+parent.lastElementChild -> vice versa
+// 8. child.parentElement =-> give you parent of that child
+// 9. const childFirst = document.querySelector(".days")
+console.log(childFirst.parentElement);
+console.log(childFirst.nextElementSibling);
+// 9. console.log( parent.childNodes)
