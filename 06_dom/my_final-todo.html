@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom</title>
+    <style>
+        .delete-button{
+            background-color: red;
+            color: white;
+            margin: 15px;
+            border-radius: 10px;           
+
+        }
+        .update-button{
+            background-color: yellow;
+            color: black;
+            margin: 15px;
+            border-radius: 10px;           
+
+        }
+    </style>
+</head>
+<body>
+    <input id="inputs" type="text" placeholder="  To-Do's">
+    <button style="background-color:blue ; color: azure; margin-left: 38px; border-radius: 10px; " onclick="functiningToDo()">Add To-do</button>
+    
+</body>
+<script>
+    function functiningToDo(){
+      const input =  document.getElementById("inputs").value.trim()
+      if (input !== "") {
+       // create new li 
+      const newList = document.createElement("li")
+      // Added  textNode
+      newList.appendChild(document.createTextNode(input))
+      // Added delete button
+      const deleteButton = document.createElement("button")
+        deleteButton.setAttribute("class" , "delete-button")
+        deleteButton.innerHTML = "Delete"
+        deleteButton.addEventListener("click" , function(){
+        newList.remove()
+      })
+      // Added update to do button
+
+
+        const updatebutton = document.createElement("button")
+          updatebutton.setAttribute("class" , "update-button")
+          updatebutton.innerHTML = "Update To-do"
+          updatebutton.addEventListener("click", function(){
+            const updatedInput = prompt("Update your To-do : ")    
+            if ( updatedInput !== null && updatedInput !== "" ) {
+                 newList.firstChild.textContent = updatedInput 
+            } 
+          })
+
+        // Appending newlist to body 
+        document.body.appendChild(newList)  
+        // Appending update button on corresponding list
+        newList.appendChild(updatebutton)
+        // Appending delete button to corresponding list
+        newList.appendChild(deleteButton)
+
+
+        // clearing input box after user clicked add button
+        document.getElementById("inputs").value = ""
+      
+      }
+    
+
+    }
+
+     
+</script>
+</html>
