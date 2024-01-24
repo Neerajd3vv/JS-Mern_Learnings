@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello bhai</h1>
+    <a href="https://google.com">Google</a>
+    <hr>
+    <br>
+    <a href="/html-learnings/another.html"> say hello!</a>
+    <hr>
+    <br>
+    <img src="/html-learnings/images/itachi.jpg" height="400px" alt="itachi">
+    <hr>
+    <br>   
+    <b>Bold</b>
+    <br>
+    <i>italic</i>
+    <br>
+    <u>underline</u>
+    <hr>
+    <br>
+    <p>
+        hey! i hope you <b>doing well!</b>
+    </p>
+    <br>
+    <big>big text</big>
+    <br>
+    <small>small text</small>
+    <hr>
+    <p>H<sub>2</sub>o</p>
+    <br>
+    <p>4<sup>2</sup>=16</p>
+    <hr>
+    <!-- we use pre tag when we want our spaces in the text to be counted -->
+    <pre>hello                 bhot sara <b>space</b></pre> 
+    <br>
+    <hr>
+    <h3>Semantic tags</h3>
+
+    <!-- semantic and non-semantic tags -->
+
+    <header>
+        <!-- all conent related to heading or main at the top of web page should be inside this tag        -->
+    </header>
+
+    <main>
+        <section> Education : <b>b.com </b>from <b>Du</b></section>
+        <section> Education : <b>12<sup>th</sup> </b>Board- <b>CBSE</b></section>
+        <section> Education : <b>10<sup>th</sup> </b>Board- <b>CBSE</b></section>
+        <hr>
+        <article> just to write article or some info in main tag</article>
+        <hr>
+        <aside> specifiy conent which is not a part of out main section for eg. - Ad at the end of main tag </aside>
+    </main>
+    <br>
+    <hr>
+
+    <!-- new attribute for anchor tag so on clcik the openai it will open openai home page in new tab      -->
+    <!-- <a href="https://www.openai.com" target="_main"> openai</a> -->
+    <a href="https://www.openai.com" target="_main"><br><img src="/html-learnings/images/download.png" height="100px" style="border: 
+    1.9px solid black;"></a>
+    <br>
+    <hr>
+     
+    <h3>Non-Semanting tags</h3>
+    <!-- Div is a container for another tag it has no use of its own   , it will take whole width of line such elements are called block 
+    element  -->   
+   
+    <div> i am div</div>
+    <br>
+    <!-- AND inline element is opposite of block element   -->
+    <span> im a cute span i wont take whole width of line</span>
+    <br>
+    <hr>
+    <h3> ol tag</h3>
+    <ol>
+        <li>cpu</li>
+        <ol>
+            <li>intel i9 </li>
+            <li>13<sup>th</sup>Gen</li>
+        </ol>
+        <li>ram</li>
+        <ol>
+            <li>corsair </li>
+            <li>ddr5 3200mhz</li>
+        </ol>
+        <li>gpu</li>
+        <ol>
+            <li>rtx 4090ti</li>
+            <li>msi oc edition</li>
+        </ol>
+    </ol>
+    <br>
+    <h3> ul tag</h3>
+    <ul>
+        <li>cpu</li>
+        <ul>
+            <li>intel i9 </li>
+            <li>13<sup>th</sup>Gen</li>
+        </ul>
+        <li>ram</li>
+        <ul>
+            <li>corsair </li>
+            <li>ddr5 3200mhz</li>
+        </ul>
+        <li>gpu</li>
+        <ul>
+            <li>rtx 4090ti</li>
+            <li>msi oc edition</li>
+        </ul>
+    </ol>
+    <br>
+    <hr>
+    <h3>table</h3>
+    <!-- tr- table row , th- table head , td- table data   -->
+    <table>
+        <!-- table caption  -->
+        <caption>Employee data</caption>
+        <tr>
+            <!-- colspan to merge heading , this would be helpful where varoius row has same heading -->
+            <th colspan="3">Employee data</th>
+            <!-- <th>Employee salary</th>
+            <th>Company name</th> -->
+        </tr>
+
+        <tr>
+            <td>Neeraj</td>
+            <td>12 lpa</td>
+            <td>Google</td>
+        </tr>
+        <tr>
+            <td>surya</td>
+            <td>14 lpa</td>
+            <td>Amazon</td> 
+        </tr>
+        <tr>
+            <td>Raj</td>
+            <td>10 lpa</td>
+            <td>Razorpay</td>
+        </tr>
+    </table>
+    <br>
+    <hr>
+    <h2>form</h2>
+    <form action="/action.php">
+        <input type="text" placeholder="username"><br></br>
+        <input type="password" placeholder="password">
+        <h2>radio-button</h2>
+        <input type="radio" value="Class 12th" name="class">12th
+        <input type="radio" value="Class 10th" name="class">10th
+        <h4>label functionality</h4>
+        <label for="007">
+            <input type="radio" value="class 10th" name="class" id="007"=>class 10th
+        </label>
+        <label for ="008">
+            <input type="radio" value="class 12th" name="class" id="008">class 12th
+                       
+        </label>
+        <h4>Checkboxes</h4>
+        <label>
+            <input type="checkbox" value="intel i5" name="pc components">intel i5
+        </label><br>
+        <label>
+            <input type="checkbox" value="16gb ram" name="pc components">16gb ram     
+        </label><br>
+        <label>
+            <input type="checkbox" value="corsair cabinet" name="pc components">corsair cabinet
+        </label><br>
+        <label>
+            <input type="checkbox" value="rtx 4090 gpu" name="pc components">rtx 4090 gpu 
+        </label><br>
+        <br>
+        
+        <h3>text-area</h3>
+        <textarea name="feedback" placeholder="please give your feedback" rows="6" cols="40"></textarea>
+        <br>
+        
+        <h3>Select </h3>
+        <select>
+            <option value="delhi">delhi</option>
+            <option value="sikkim">sikkim</option>
+            <option value="gujrat">gujrat</option>
+            <option value="maharashrta">maharashrta</option>
+            <option value="haryana">haryana</option>
+        </select>
+        <br></br>
+        <input type="submit" value="submit"     >
+        <br></br>
+        <br></br>
+        <br></br>
+        <hr>
+        <h3>iframe website inside your website</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/N56BQ5p5t2o?si=DNNdBu8TefZUatyr" title="YouTube video player" 
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen></iframe>   
+        <br>
+        <hr>
+        <video src="/html-learnings/videos/rage.mp4" controls width="560" height="315"> obito's rage!</video>   
+              
+    </form>
+
+
+
+
+
+</body>
+</html>
