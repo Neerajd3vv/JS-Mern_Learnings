@@ -1,0 +1,550 @@
+h1{
+    color: blue;
+}
+
+body{
+    background-color: #ffff00
+    
+}
+
+
+ 
+h2 {
+    /* color: rgb(233,67,99);   */
+    /* or  you can use hex   */
+    color: #ff0000;
+
+}
+#divone{
+    background-color: blue;
+    color: white;
+}
+
+.heading{
+    color: red;
+}
+
+button{
+    background-color: green;
+}
+
+#paraone{
+    text-align: center;
+}
+
+#headingTwo{
+    color: blue;
+    /* text-decoration: white line-through  */
+    text-decoration: black dotted underline
+}
+
+#anchorOne{
+    text-decoration: none;
+}
+
+#ranparaone{
+    font-weight: lighter;
+}
+#ranparatwo{
+    font-weight: normal;
+}
+#ranparathree{
+    font-weight: bold;
+}
+#ranparafour{
+    font-weight: bolder;
+}
+
+#parafontfamily{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#line_height{
+    line-height: 35px;
+}
+
+#text_transform{
+    text-transform: uppercase;
+}
+
+#ps-header{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+#outer{
+    font-size: 25px;
+}
+
+#inner{
+    font-size: 17px;
+}
+
+.levels{
+    color: black;
+    text-align: center;
+    text-decoration: blue underline;
+}
+
+#parazz{
+    height: 80px;
+    width: 400px; 
+    background-color: grey;
+    /* border-width: 3px;  
+    border-style: solid;
+    border-color: blue; */
+    border-radius: 7px;
+    text-align: center;
+    font-size: 30px;
+
+      /* or you can use border shorthand to set border 
+
+    width,style,color   */
+    border: 3px solid blue
+
+}
+
+#newbutton{
+    background-color: blue;
+    color: wheat;
+    height: 100px;
+    width: 260px;
+}
+
+#divphela{
+    background-color:red;
+    width: 200px;
+    height: 80px;
+    padding-top: 20px;
+}
+
+#divtwo{
+    background-color: red;
+    width: 200px;
+    height: 80px;
+    padding-left: 20px;
+    margin-top: 20px;
+
+}
+
+#divthree{
+    background-color: red;
+    width: 200px;
+    height: 80px;
+    padding: 30px;
+    margin-top: 30px;
+
+
+}
+
+#divhu{
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    border-radius: 50%;
+}
+
+#inlinediv{
+    background-color: green;
+    color: white;
+    display: inline;
+}
+
+#boxspan{
+    background-color: green;
+    color: white;
+    display: block
+}
+
+.divowner{
+    width: 100px;
+    height: 100px;
+    /* display: inline;   */
+
+    display: inline-block;
+    margin: 26px;
+    padding: 26px;
+}
+
+#div1{
+    height: 100px;
+    width: 200px;
+    background-color: green;
+    color: white;
+    font-size: 14px;
+    
+}
+
+#div2{
+    /* height: 50px;  */
+    height: 50%; 
+    width: 50%;
+    background-color: blue;
+    font-size: 1.3rem;
+
+}
+
+.pogi{
+    display: inline-block;
+    margin: 10px;
+}
+
+#p1{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    background-color: green;
+    position: static;
+    top: 10px;
+}
+#p2{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    background-color: blue;
+    position: relative;
+    top: 10px;
+    left: 37px;
+
+
+
+}
+#p3{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    background-color: red;
+    position: absolute;  
+    top: 30px;
+}
+#p4{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    background-color: pink;
+    /* position: fixed;   */
+    top: 20px;
+    right: 40px;
+}
+
+
+#p5{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    background-color: orange;
+    z-index: 4;
+    
+}
+
+#anime{
+    display: inline-block;
+}
+
+#img1{
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+    border: 2px solid black;
+    color: white;
+    background-image: url("Itachi.webp");
+    background-size: contain;
+    
+}
+
+#img2{
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+    border: 2px solid black;
+    color: white;
+    background-image: url("madara.png");
+    background-size: cover;
+}
+
+/* #test5{
+    height: 100px;
+    width: 100px;
+    background-image: url("Itachi.webp");
+    background-size: cover;
+    border: 2px blue solid;
+    position: fixed;
+    right: 0px;
+    bottom: 30px;
+} */
+
+
+#flexwex{
+    height: 300px;
+    width: 700px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between;   */
+
+    /* align-items: flex-start;  */
+    align-content: flex-start;  
+
+
+    /* flex-wrap: wrap;  */
+
+
+
+    
+    
+}
+
+#flex1{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    background-color: red;
+    color: white;
+    display: inline-block;
+
+    /* align-self: flex-end; */
+    
+    
+   
+  
+}
+#flex2{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    background-color: blue;
+    color: white;
+    display: inline-block;
+    /* flex-shrink: 0.5;  */
+    flex-grow: 1;
+    
+}
+#flex3{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    background-color: pink;
+    color: black;
+    display: inline-block;
+    flex-grow: 2;
+    
+}
+#flex4{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    background-color: orangered;
+    color: white;
+    display: inline-block;
+    
+}
+#practise6{
+    background-color: green;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    
+    
+
+}
+.listsme{
+    list-style: none;
+    display: inline-block;
+}
+
+.ezpz{
+    text-decoration: none;  
+    color: white;
+    list-style-type: none;
+}
+
+#outtydiv{
+    height: 200px;
+    width: 200px;
+    background-color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#innidiv{
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    /* display: flex;  */
+    
+    
+}
+
+#firstdiv{
+    height: 100px;
+    width: 100px;
+    background-color: #ff0000;
+    border: 2px solid black
+
+}
+#seconddiv{
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    border: 2px solid black
+
+}
+#thirddiv{
+    height: 100px;
+    width: 100px;
+    background-color: violet;
+    border: 2px solid black
+
+}
+
+#fourthdiv{
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    border: 2px solid black
+
+}
+
+ @media (max-width: 300px){
+    #firstdiv{
+        background-color: green;
+    }
+} 
+
+@media (min-width:300px) and (max-width:400px){
+    #seconddiv{
+        background-color: pink;
+    }
+}
+
+@media (min-width:400px) and (max-width:600px){
+    #thirddiv{
+        background-color: red
+    }
+} 
+
+@media (min-width:600px){
+    #fourthdiv{
+        background-color: blue;
+    }
+}
+
+#boxxy{
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+    height: 100px;
+    width: 100px;
+    background-color: aquamarine;
+
+}
+
+#boxxy:hover{
+    background-color: blue;
+    color: yellow;
+    transition-property: all;
+    transition-duration: 1.5s;   
+    transition-timing-function:ease-in-out ;
+    transition-delay: 60ms;  
+    transform: rotate(180deg);
+
+    /* transform: scalex(1.5);    */
+    /* transform: scaley(1.5);   */
+    transform: scale(1.5);  
+
+    /* transform: translatey(-500px); */
+
+    /* transform: skew(45deg);  */
+
+
+
+}
+
+#animationshit{
+    position: absolute ;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: blue;
+    animation-name: animatedBox;  
+    /* animation-delay: 0.5s;  */
+    animation-duration: 2s;   
+    /* animation-timing-function: ease-in;  */
+    animation-iteration-count: infinite; 
+    animation-direction:alternate;
+}
+
+
+
+/* @keyframes animatedBox {
+    from {background-color: blue ;}
+    to {background-color: yellow;}
+    
+} */
+
+
+@keyframes animatedBox {
+    from {left: 0px;
+        background-color: blue;
+    }
+    to {left:500px;
+        background-color: red;
+
+    }
+    
+}
+
+/* % in animation */
+@keyframes animatedBox {
+    0% {left: 0px;
+        background-color: blue;
+    }
+    25%{
+        background-color: purple;
+    }
+    50%{
+        background-color: green;
+    }
+    75%{
+        background-color: chocolate;
+    }
+    100% {left:500px;
+        background-color: red;
+
+    }
+    
+}
+
+
+#papadivvy{
+    display: flex;
+    justify-content: center;
+}
+#loader{
+    
+    height: 50px;
+    width: 50px;
+    /* background-color:red;  */
+    border-radius: 50%; 
+    border: 6px solid black;
+    border-top: 6px solid wheat;
+    transition-property: all;
+    animation-name: loaderanimate;
+    animation-duration: .9s;
+    animation-timing-function: steps(50); 
+    animation-iteration-count: infinite; 
+
+
+}
+
+
+@keyframes loaderanimate{
+     from{
+        transform: rotate(0deg);
+     }
+     to{
+        transform: rotate(360deg);
+     }
+}
