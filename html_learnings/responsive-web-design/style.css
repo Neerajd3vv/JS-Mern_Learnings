@@ -1,0 +1,119 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}   
+ 
+ 
+ /* px me */
+
+/* .main-box{
+    background-color: red;
+    height: 400px;
+    width: 500px;
+
+} */
+        
+       /* % me  */
+/* .sec-div{
+    background-color: blue;
+    height: 50%;
+    width: 50%;
+
+} */
+
+      /* vh,vm  */
+
+      /* .main-box{
+        background-color: red;
+        height: 40vh;
+        width: 50vw;
+    
+    } */
+
+      /* .sec-div{
+        background-color: blue;
+        height: 50svh;
+        width: 50vw;
+    
+    } */
+
+    /* .heading-2{
+        font-size: 5vmin;
+
+    } */
+
+           /* em - it changes its parameters on the bases of parent element */
+
+/* .papa-div{
+    background-color: #dbdbdb;
+    width: 50%;
+    font-size: 28px;
+
+}            */
+
+/* .one{
+    font-size: 1em;
+}
+.two{
+    font-size: .7em;
+}
+.three{
+    font-size: 1.5em;
+} */
+
+
+              /* rem  its depends on root element size  */
+/* 
+              .one{
+                font-size: 2rem;
+            }
+            .two{
+                font-size: 3rem;
+            }
+            .three{
+                font-size: 2rem;
+            }              
+      */
+
+       /* flexbox  */
+
+
+ html , body{
+    height: 100%;
+    width: 100%;
+ }        
+.parent{
+    height: 100%;
+    width: 100%;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* flex-wrap: wrap;  */
+}
+.chil-1{
+    height: 300px;
+    width: 300px;
+    background-color: red;
+}
+.chil-2{
+    height: 300px;
+    width: 300px;
+    background-color: orange;
+}
+
+ /* media-query  */
+
+.media-div{
+    height: 200px;
+    width: 200px;
+    background-color: blanchedalmond;
+}
+
+@media (max-width : 600px){
+    .media-div{
+        background-color: grey;
+        height: 100px;
+        width: 100px;
+    }
+}
